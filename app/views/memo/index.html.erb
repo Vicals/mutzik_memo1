@@ -1,0 +1,34 @@
+<div class="container">
+    <h1 style="margin-top:50px;">메모앱 만들기</h1>
+        <!--<div class="col-3">-->
+            <div class="row">
+                <% @post.each do |p| %>
+                        <div class="card col-2" style="margin-left:15px; margin-top:15px;">
+                            <a href="/memo/view/<%= p.id %>" style="color: #000000; text-decoration:none;">
+                              <div class="card-body">
+                                <div style="text-align:center;">
+                                    <h4 class="card-title"><%= p.title %></h5>
+                                </div>
+                                <hr>
+                                <p class="card-text"><%= p.content %></p>
+                            </a>
+                            <br>
+                            <div style="text-align:center; text-decoration:none;">
+                                <a href="/memo/edit">
+                                    <span class="badge badge-warning">수정</span>
+                                </a>
+                                <a href="/memo/destroy">
+                                    <span class="badge badge-danger">삭제</span>
+                                </a>
+                            </div>
+                          </div>
+                        </div>
+                <% end %>
+            </div>
+        <!--</div>-->
+    <div style="margin-top:30px; text-align:right;">
+        <a href="/memo/new">
+            <button type="button" class="btn btn-dark">글쓰기</button>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <h1 style="margin-top:50px; text-align:center;">우섭이의 메모장</h1>
+    <form style="margin-top:50px;" action="/memo/create" method="POST">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">제목</label>
+        <input name="title" type="text" class="form-control" id="exampleFormControlInput1" placeholder="제목을 입력하세요">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">내용</label>
+        <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="10" placeholder="내용을 입력하세요"></textarea>
+      </div>
+      <div style="text-align:right;">
+          <a href="/memo/index">
+              <button type="button" class="btn btn-warning">목록보기</button>
+          </a>
+          <button type="submit" class="btn btn-dark">저장하기</button>
+      </div>
+    </form>
+</div>
